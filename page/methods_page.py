@@ -26,7 +26,7 @@ class MethodsPage(BasePage, Paths):
         return self.wait(self.CHECK_EMAIL).text
 
     def get_current_address(self):
-        return self.wait(self.CHECK_CUR_ADDRESS).text
+        return self.wait(self.CHECK_CUR_ADDRESS).get_attribute('value')
 
     def get_permanent_address(self):
-        return self.wait(self.CHECK_PER_ADDRESS).text
+        return self.wait(self.CHECK_PER_ADDRESS).get_attribute('value')
