@@ -1,8 +1,5 @@
 from helper import Helper
 from page.methods_page import MethodsPage
-from page.paths import Paths
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 
 
 class TestDemoQA:
