@@ -1,4 +1,4 @@
-from helper import Helper
+from utils.helper import Helper
 from page.methods_page import MethodsPage
 
 
@@ -6,7 +6,7 @@ class TestDemoQA:
     def test_box(self, browser):
         # ARRANGE
         page = MethodsPage(browser)
-        page.open()
+        page.open_url()
 
         # ACT
         f_name = Helper.generate_name()
@@ -29,11 +29,7 @@ class TestDemoQA:
         c_address_text = page.get_current_address()
         p_address_text = page.get_permanent_address()
 
-        assert f_name in name_text
-        assert email in email_text
-        assert c_address in c_address_text
-        assert p_address in p_address_text
-
-
-
-
+        assert f_name in name_text, f"Ожидалось '{f_name}', получено '{name_text}'"
+        assert email in email_text, f"Ожидалось '{email}', получено '{email_text}'"
+        assert c_address in c_address_text, f"Ожидалось '{c_address}', получено '{c_address_text}'"
+        assert p_address in p_address_text, f"Ожидалось '{p_address}', получено '{p_address_text}'"
