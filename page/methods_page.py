@@ -1,32 +1,32 @@
 from page.base_page import BasePage
-from page.paths import Paths
+from page.paths import Path
 
 
-class MethodsPage(BasePage, Paths):
+class MethodsPage(BasePage):
 
     def enter_full_name(self, text):
-        self.wait(self.FULL_NAME).send_keys(text)
+        self.send_keys_element(Path.FULL_NAME, text)
 
     def enter_email(self, text):
-        self.wait(self.EMAIL).send_keys(text)
+        self.send_keys_element(Path.EMAIL, text)
 
     def enter_current_address(self, text):
-        self.wait(self.CURRENT_ADDRESS).send_keys(text)
+        self.send_keys_element(Path.CURRENT_ADDRESS, text)
 
     def enter_permanent_address(self, text):
-        self.wait(self.PERMANENT_ADDRESS).send_keys(text)
+        self.send_keys_element(Path.PERMANENT_ADDRESS, text)
 
     def click_submit(self):
-        self.wait(self.SUBMIT).click()
+        self.click_element(Path.SUBMIT)
 
     def get_name_text(self):
-        return self.wait(self.CHECK_NAME).text
+        return self.wait(Path.CHECK_NAME).text
 
     def get_email_text(self):
-        return self.wait(self.CHECK_EMAIL).text
+        return self.wait(Path.CHECK_EMAIL).text
 
     def get_current_address(self):
-        return self.wait(self.CHECK_CUR_ADDRESS).get_attribute('value')
+        return self.wait(Path.CHECK_CUR_ADDRESS).get_attribute('value')
 
     def get_permanent_address(self):
-        return self.wait(self.CHECK_PER_ADDRESS).get_attribute('value')
+        return self.wait(Path.CHECK_PER_ADDRESS).get_attribute('value')
