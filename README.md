@@ -26,10 +26,5 @@ pip install -r requirements.txt
 
 6. Запуск тестов
 ```bash
-pytest --alluredir=allure-results
-```
-
-7. Запуск отчета allure по тестам
-```bash
-allure serve allure-results
+pytest tests/test_box.py
 ```
