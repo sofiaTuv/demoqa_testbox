@@ -8,11 +8,14 @@ class BasePage:
     def __init__(self, browser):
         self.browser = browser
 
-    def open(self):
+    def open_url(self):
         self.browser.get(self.PAGE_URL)
 
     def wait(self, path):
-        WebDriverWait(self.browser, 5).until(EC.presence_of_element_located(path))
-        return self.browser.find_element(*path)
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located(path))
 
+    def click_element(self, path):
+        self.wait(path).click()
 
+    def send_keys_element(self, path, text):
+        self.wait(path).send_keys(text)
