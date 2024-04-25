@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class Paths:
+class Path:
     FULL_NAME = (By.XPATH, '//input[@id="userName"]')
     EMAIL = (By.XPATH, '//input[@id="userEmail"]')
     CURRENT_ADDRESS = (By.XPATH, '//textarea[@id="currentAddress"]')
